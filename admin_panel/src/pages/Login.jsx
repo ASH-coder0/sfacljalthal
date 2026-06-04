@@ -84,7 +84,9 @@ const Login = () => {
       <Card className="w-full max-w-md p-6 ">
         <div className="flex flex-col justify-center items-center">
           <img src="/jalthal.png" className="size-20" />
-          <CardTitle className="text-lg">Bardhaghat CCI</CardTitle>
+          <CardTitle className="text-lg">
+            साना किसान कृषि सहकारी संस्था लि. जलथल
+          </CardTitle>
         </div>
         <CardHeader>
           <CardTitle>Login</CardTitle>
