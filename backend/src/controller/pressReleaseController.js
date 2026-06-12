@@ -105,11 +105,12 @@ const getPressRelease = asyncHandler(async (req, res, next) => {
     });
   }
 
-  return res.status(200).json({
+ if (!data) {
+  return res.status(404).json({
     status: false,
-    message: "Press release not found.",
-    data: data
+    message: "Press Release cannot be found."
   });
+}
 });
 
 const getPressReleasePagination = asyncHandler(async (req, res, next) => {

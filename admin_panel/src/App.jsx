@@ -13,6 +13,7 @@ import {
   Team,
   Gallery // 
 } from "./pages";
+import Holiday from "./pages/Holiday";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
         path: "/gallery", // 
         element: <Gallery />,
       },
+      {
+        path: "/holiday",
+        element: <Holiday/>
+      }
     ],
   }
 ]);

@@ -22,10 +22,11 @@ const {
 } = require("./routes");
 const galleryRoutes = require("./routes/gallery");
 const swaggerDocument = require("../swagger-output.json");
+const holidayRoutes = require("./routes/holidayRoutes");
 
 // CORS Options
 const corsOptions = {
-  origin: [REACT_APP_URL, REACT_ADMIN_APP_URL, "http://localhost:3000"],
+  origin: [REACT_APP_URL, REACT_ADMIN_APP_URL, "http://localhost:3000", "http://localhost:5173"],
   credentials: true,
 };
 
@@ -35,8 +36,14 @@ app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+//CORP header for image  access issues 
+app.use((req, res, next) => {
+  res.setHeader("Cross-Origin-Resource-Policy", "cross-origin");
+  next();
+});
 // Serve public folder
 app.use(express.static(path.join(__dirname, "../public")));
+
 
 // Serve gallery images with proper CORS & cross-origin headers
 app.use(
@@ -50,6 +57,7 @@ app.use(
 );
 
 // API routes
+app.use("/api", holidayRoutes);
 app.use("/api/gallery", galleryRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api", teamRoutes);
@@ -57,6 +65,7 @@ app.use("/api", pressReleaseRoutes);
 app.use("/api", noticeRoutes);
 app.use("/api", eventRoutes);
 app.use("/api", imageRoutes);
+
 
 // Swagger for dev
 if (NODE_ENV === "development") {

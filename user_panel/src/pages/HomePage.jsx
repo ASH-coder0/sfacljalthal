@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import HeroSlider from "../components/HeroSlider";
 import NoticeBoard from "../components/NoticeBoard";
 import BlogsSection from "../components/BlogsSection";
-import CalendarModule from "../components/CalendarModule";
+import CalendarModule from "../pages/CalendarModule";
 import {
   FaLeaf,
   FaHandshake,

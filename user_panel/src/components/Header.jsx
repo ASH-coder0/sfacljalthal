@@ -57,100 +57,102 @@ export default function Header() {
   }, [location]);
 
   return (
-    <header className="w-full sticky top-0 z-50 shadow-lg">
-      {/* Top bar */}
-      <div className="bg-primary-900 text-white py-2 px-4">
-        <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
-          <div className="flex items-center gap-4">
-            <a
-              href="tel:+977-1-4000000"
-              className="flex items-center gap-1.5 hover:text-accent transition-colors"
-            >
-              <FaPhone className="text-accent text-xs" />
-              <span>+977-1-4000000</span>
-            </a>
-            <a
-              href="mailto:info@sfacljalthal.com.np"
-              className="hidden md:flex items-center gap-1.5 hover:text-accent transition-colors"
-            >
-              <FaEnvelope className="text-accent text-xs" />
-              <span>info@sfacljalthal.com.np</span>
-            </a>
-          </div>
-          <div className="flex items-center gap-3">
-            <a
-              href="https://www.facebook.com"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-accent transition-colors"
-            >
-              <FaFacebook />
-            </a>
-            <a
-              href="https://www.youtube.com"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-accent transition-colors"
-            >
-              <FaYoutube />
-            </a>
-            <a
-              href="https://www.twitter.com"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-accent transition-colors"
-            >
-              <FaTwitter />
-            </a>
-            <Link
-              to="/login"
-              className="ml-2 flex items-center gap-1.5 bg-accent text-white px-3 py-1 rounded text-xs font-semibold hover:bg-yellow-600 transition-colors"
-            >
-              <FaUser className="text-xs" /> Login
-            </Link>
+    <>
+      <header className="w-full shadow-lg">
+        {/* Top bar */}
+        <div className="bg-primary-900 text-white py-2 px-4">
+          <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
+            <div className="flex items-center gap-4">
+              <a
+                href="tel:+977-1-4000000"
+                className="flex items-center gap-1.5 hover:text-accent transition-colors"
+              >
+                <FaPhone className="text-accent text-xs" />
+                <span>+977-1-4000000</span>
+              </a>
+              <a
+                href="mailto:info@sfacljalthal.com.np"
+                className="hidden md:flex items-center gap-1.5 hover:text-accent transition-colors"
+              >
+                <FaEnvelope className="text-accent text-xs" />
+                <span>info@sfacljalthal.com.np</span>
+              </a>
+            </div>
+            <div className="flex items-center gap-3">
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-accent transition-colors"
+              >
+                <FaFacebook />
+              </a>
+              <a
+                href="https://www.youtube.com"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-accent transition-colors"
+              >
+                <FaYoutube />
+              </a>
+              <a
+                href="https://www.twitter.com"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-accent transition-colors"
+              >
+                <FaTwitter />
+              </a>
+              <Link
+                to="/login"
+                className="ml-2 flex items-center gap-1.5 bg-accent text-white px-3 py-1 rounded text-xs font-semibold hover:bg-yellow-600 transition-colors"
+              >
+                <FaUser className="text-xs" /> Login
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Logo + Brand Bar */}
-      <div className="bg-white border-b border-primary-100 py-3 px-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3">
-            {/* Logo SVG */}
-            <div className="w-14 h-14  rounded-full flex items-center justify-center shadow-md flex-shrink-0 border-2 border-accent">
-              <img
-                src="/assets/jalthal.png"
-                alt="Jalthal Logo"
-                className="w-cover h-cover object-contain"
-              />
-            </div>
-            <div>
-              <div className="font-display text-primary-800 font-bold text-lg leading-tight">
-                साना किसान कृषि सहकारी संस्था लि.
+        {/* Logo + Brand Bar */}
+        <div className="bg-white border-b border-primary-100 py-3 px-4">
+          <div className="max-w-7xl mx-auto flex items-center justify-between">
+            <Link to="/" className="flex items-center gap-3">
+              {/* Logo SVG */}
+              <div className="w-14 h-14  rounded-full flex items-center justify-center shadow-md flex-shrink-0 border-2 border-accent">
+                <img
+                  src="/assets/jalthal.png"
+                  alt="Jalthal Logo"
+                  className="w-cover h-cover object-contain"
+                />
               </div>
-              <div className="text-primary-600 text-xs font-body">
-                Sana Kisan Agro Cooperative Ltd. — Jalthal
+              <div>
+                <div className="font-display text-primary-800 font-bold text-lg leading-tight">
+                  साना किसान कृषि सहकारी संस्था लि.
+                </div>
+                <div className="text-primary-600 text-xs font-body">
+                  Sana Kisan Agro Cooperative Ltd. — Jalthal
+                </div>
+                <div className="text-primary-500 text-xs">
+                  sfacljalthal.com.np
+                </div>
               </div>
-              <div className="text-primary-500 text-xs">
-                sfacljalthal.com.np
+            </Link>
+            {/* Banner text on large screens */}
+            <div className="hidden lg:block text-right">
+              <div className="text-accent font-display font-semibold text-sm">
+                सहकारी — समृद्धि — सेवा
               </div>
-            </div>
-          </Link>
-          {/* Banner text on large screens */}
-          <div className="hidden lg:block text-right">
-            <div className="text-accent font-display font-semibold text-sm">
-              सहकारी — समृद्धि — सेवा
-            </div>
-            <div className="text-primary-600 text-xs mt-0.5">
-              Cooperative · Prosperity · Service
+              <div className="text-primary-600 text-xs mt-0.5">
+                Cooperative · Prosperity · Service
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </header>
 
       {/* Navigation */}
       <nav
-        className={`bg-primary-700 transition-all duration-300 ${scrolled ? "shadow-xl" : ""}`}
+        className={`sticky tops-0 z-50 bg-primary-700 transition-all duration-300 ${scrolled ? "shadow-xl" : ""}`}
       >
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
           {/* Desktop Nav */}
@@ -240,6 +242,6 @@ export default function Header() {
           </div>
         )}
       </nav>
-    </header>
+    </>
   );
 }

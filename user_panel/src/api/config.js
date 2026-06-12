@@ -11,7 +11,7 @@ export const fetchNotices = async (limit = 10, page = 1) => {
   const data = await res.json();
   return data.data.data;
 };
-
+//fettch notice
 export const fetchNoticeById = async (id) => {
   const res = await fetch(`${API_BASE}/getnotice?noticeId=${id}`);
 
@@ -24,13 +24,16 @@ export const fetchNoticeById = async (id) => {
 // Blogs / Press Releases
 export const fetchBlogs = async (limit = 10, page = 1) => {
   const res = await fetch(
-    `${API_BASE}/getallpressrelease?limit=${limit}&page=${page}&publish_status=published&status=1`,
+    `${API_BASE}/getallpressrelease?limit=${limit}&page=${page}&publish_status=published&status=1`
   );
 
-  if (!res.ok) throw new Error("Failed to fetch blogs");
-
   const data = await res.json();
-  return data.data.data;
+  const inner = data.data;
+
+  return {
+    data: inner?.data || [],
+    totalItems: inner?.totalItems || 0,
+  };
 };
 
 export const fetchBlogById = async (id) => {
@@ -62,9 +65,15 @@ export const fetchEvents = async (limit = 10, page = 1) => {
   );
 
   if (!res.ok) throw new Error("Failed to fetch events");
-
   const data = await res.json();
   return data.data.data;
+};
+
+export const fetchEventById = async (id) => {
+  const res = await fetch(`${API_BASE}/getevent?eventId=${id}`);
+  if (!res.ok) throw new Error("Failed to fetch event");
+  const data = await res.json();
+  return data.data;
 };
 
 // Images

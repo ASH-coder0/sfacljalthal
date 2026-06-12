@@ -11,7 +11,8 @@ import DairyPage from './pages/DairyPage';
 import FinancialPage from './pages/FinancialPage';
 import ContactPage from './pages/ContactPage';
 import LoginPage from './pages/LoginPage';
-
+import CalendarModule from './pages/CalendarModule';
+import EventSinglePage from './pages/EventSinglePage';
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
@@ -37,6 +38,8 @@ export default function App() {
             <Route path="/financial" element={<FinancialPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/events" element={<CalendarModule />} /> 
+            <Route path='/events/:id' element={<EventSinglePage/>}/>
             <Route path="*" element={
               <div className="flex flex-col items-center justify-center min-h-[60vh] text-center px-4">
                 <div className="text-6xl mb-4">🌿</div>

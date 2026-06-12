@@ -22,7 +22,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex justify-between h-16 bg-slate-200 items-center px-4 ">
+    <div className="flex justify-between h-16 bg-green-100 items-center px-4 ">
       <h1 className="text-2xl font-medium">Dashboard</h1>
 
       {/* ✅ Changed outer <button> to <div> to avoid invalid nesting */}

@@ -14,6 +14,7 @@ const PageBanner = ({ title, subtitle, breadcrumb }) => (
   </div>
 );
 
+
 export function BlogsPage() {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -22,18 +23,18 @@ export function BlogsPage() {
   const [search, setSearch] = useState('');
   const limit = 9;
 
-  useEffect(() => {
-    setLoading(true);
-    fetchBlogs(limit, page)
-      .then(data => {
-        const items = data?.data || data?.pressReleases || data?.rows || data || [];
-        const count = data?.total || data?.count || items.length;
-        setBlogs(Array.isArray(items) ? items : []);
-        setTotal(count);
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
-  }, [page]);
+useEffect(() => {
+  setLoading(true);
+
+  fetchBlogs(limit, page)
+    .then(res => {
+       console.log('fetchBlogs res:', res); 
+      setBlogs(res.data || []);        
+      setTotal(res.totalItems || 0);
+      setLoading(false);
+    })
+    .catch(() => setLoading(false));
+}, [page]);
 
   const filtered = blogs.filter(b =>
     b.title?.toLowerCase().includes(search.toLowerCase())
