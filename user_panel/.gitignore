@@ -1,3 +1,11 @@
+
+# Environment files
+.env
+backend/.env
+user_panel/.env
+admin_panel/.env
+
+
 # Logs
 logs
 *.log

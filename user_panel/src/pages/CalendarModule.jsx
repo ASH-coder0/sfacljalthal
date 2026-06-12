@@ -89,7 +89,7 @@ export default function CalendarModule() {
   const selectedHolidayTitles = holidayMap.get(selectedHolidayKey) || [];
 
   const today = new Date();
-  today.setHours(0, 0, 0, 0);
+  today.setHours(0, 0, 0, 0);8
 
   const allUpcomingEvents = events
     .filter(e => {
@@ -186,6 +186,7 @@ export default function CalendarModule() {
                           key={`holiday-${idx}`}
                           className="flex items-center gap-3 p-3 rounded-xl border border-red-200 bg-red-50"
                         >
+                        
                           <div className="flex-shrink-0 w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
                             <FaGift className="text-red-600" />
                           </div>
